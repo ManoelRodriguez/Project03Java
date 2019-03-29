@@ -53,7 +53,7 @@ public final class cadastro_002dfornecedores_jsp extends org.apache.jasper.runti
       out.write("    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\n");
       out.write("    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css\"\n");
       out.write("        integrity=\"sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO\" crossorigin=\"anonymous\">\n");
-      out.write("    <title>Adicionar</title>\n");
+      out.write("    <title>Cadastro de Fornecedores</title>\n");
       out.write("</head>\n");
       out.write("\n");
       out.write("<body>\n");
@@ -84,7 +84,7 @@ public final class cadastro_002dfornecedores_jsp extends org.apache.jasper.runti
       out.write("                    </a>\n");
       out.write("                    <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n");
       out.write("                        <a class=\"dropdown-item\" href=\"cadastro-cliente.jsp\" style=\"color: black;\">Clientes</a>\n");
-      out.write("                        <a class=\"dropdown-item\" href=\"cadastro-fornecedor.jsp\" style=\"color: black;\">Fornecedores</a>\n");
+      out.write("                        <a class=\"dropdown-item\" href=\"cadastro-fornecedores.jsp\" style=\"color: black;\">Fornecedores</a>\n");
       out.write("                        <div class=\"dropdown-divider\"></div>\n");
       out.write("                    </div>\n");
       out.write("                </li>\n");
@@ -98,7 +98,7 @@ public final class cadastro_002dfornecedores_jsp extends org.apache.jasper.runti
       out.write("\n");
       out.write("    <h4 style=\"text-align: center; margin-top:100px \">Cadastro de Fornecedores</h4>\n");
       out.write("\n");
-      out.write("    <form action=\"listaFornecedores.jsp\"\n");
+      out.write("    <form action=\"fornecedores.jsp\"\n");
       out.write("        style=\"width: 300px; height: 300px; position: absolute; left: 430px; top: 120px; margin: 100px;\">\n");
       out.write("        <input type=\"text\" name=\"nome\" placeholder=\"Nome\" class=\"form-control\" required><br>\n");
       out.write("        <input type=\"text\" name=\"razao\" placeholder=\"Razão Social\" class=\"form-control\" required><br>\n");
@@ -106,7 +106,7 @@ public final class cadastro_002dfornecedores_jsp extends org.apache.jasper.runti
       out.write("        <input type=\"email\" name=\"email\" placeholder=\"E-mail\" class=\"form-control\" required><br>\n");
       out.write("        <input type=\"text\" name=\"telefone\" placeholder=\"Telefone\" class=\"form-control\" required><br>\n");
       out.write("        <input type=\"text\" name=\"endereco\" placeholder=\"Endereço\" class=\"form-control\" required><br>\n");
-      out.write("        <button type=\"submit\" class=\"btn btn-primary\" style=\"position: absolute; left: 120px\" required>Enviar</button>\n");
+      out.write("        <button type=\"submit\" name=\"enviar\" class=\"btn btn-primary\" style=\"position: absolute; left: 120px\" required>Enviar</button>\n");
       out.write("    </form>\n");
       out.write("\n");
       out.write("    <footer style=\"position: absolute; top: 700px; left: 50px;\">\n");

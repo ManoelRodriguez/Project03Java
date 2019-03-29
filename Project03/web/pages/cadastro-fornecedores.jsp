@@ -59,15 +59,14 @@
 
     <h4 style="text-align: center; margin-top:100px ">Cadastro de Fornecedores</h4>
 
-    <form action="fornecedores.jsp"
-        style="width: 300px; height: 300px; position: absolute; left: 430px; top: 120px; margin: 100px;">
+    <form action="fornecedores.jsp" style="width: 300px; height: 300px; position: absolute; left: 430px; top: 120px; margin: 100px;">
         <input type="text" name="nome" placeholder="Nome" class="form-control" required><br>
         <input type="text" name="razao" placeholder="Razão Social" class="form-control" required><br>
         <input type="text" name="cnpj" placeholder="CNJP" class="form-control" required><br>
         <input type="email" name="email" placeholder="E-mail" class="form-control" required><br>
         <input type="text" name="telefone" placeholder="Telefone" class="form-control" required><br>
         <input type="text" name="endereco" placeholder="Endereço" class="form-control" required><br>
-        <button type="submit" class="btn btn-primary" style="position: absolute; left: 120px" required>Enviar</button>
+        <button type="submit" name="enviar" class="btn btn-primary" style="position: absolute; left: 120px" required>Enviar</button>
     </form>
 
     <footer style="position: absolute; top: 700px; left: 50px;">

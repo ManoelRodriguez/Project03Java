@@ -7,7 +7,7 @@ public class Fornecedor {
     private String cnpj;
     private String email;
     private String telefone;
-    private String endereço;
+    private String endereco;
 
     public String getNome() {
         return nome;
@@ -49,12 +49,12 @@ public class Fornecedor {
         this.telefone = telefone;
     }
 
-    public String getEndereço() {
-        return endereço;
+    public String getEndereco() {
+        return endereco;
     }
 
-    public void setEndereço(String endereço) {
-        this.endereço = endereço;
+    public void setEndereco(String endereço) {
+        this.endereco = endereço;
     }
     
     

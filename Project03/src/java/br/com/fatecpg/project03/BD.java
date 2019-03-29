@@ -6,7 +6,7 @@ public class BD {
 
     private static ArrayList<Fornecedor> fornecedoresList;
 
-    public static ArrayList<Fornecedor> getContatosList() {
+    public static ArrayList<Fornecedor> getFornecedoresList() {
         if (fornecedoresList == null) {
             fornecedoresList = new ArrayList<>();
             Fornecedor f1 = new Fornecedor();
@@ -15,7 +15,7 @@ public class BD {
             f1.setCnpj("12.345.678/9123-45");
             f1.setEmail("manoel@gmail.com");
             f1.setTelefone("+55 13 99123-4567");
-            f1.setEndereço("Vila São Jorge - Santos");
+            f1.setEndereco("Vila São Jorge - Santos");
 
         }
         return fornecedoresList;
