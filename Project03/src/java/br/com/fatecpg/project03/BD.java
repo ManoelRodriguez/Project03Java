@@ -20,5 +20,23 @@ public class BD {
         }
         return fornecedoresList;
     }
+    
+    private static ArrayList<Cliente> clientesList;
 
+    public static ArrayList<Cliente> getContatosClienteList() {
+        if (clientesList == null) {
+            clientesList = new ArrayList<>();
+            Cliente novoc = new Cliente();
+            novoc.setNome("Matheus Morais");
+            novoc.setCpf("111.222.333-45");
+            novoc.setRegistrogeral("11.222.333-4");
+            novoc.setEmail("clientex@yahoo.com");
+            novoc.setTel("+55 13 99123-1234");
+            novoc.setEndereco("Praça 19 de Janeiro, 144 - Praia Grande");
+            clientesList.add(novoc);
+
+        }
+        return clientesList;
+    }
+    
 }
