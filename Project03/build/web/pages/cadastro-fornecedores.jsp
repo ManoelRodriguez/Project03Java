@@ -44,7 +44,7 @@
                         Cadastre-se
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="cadastro-cliente.jsp" style="color: black;">Clientes</a>
+                        <a class="dropdown-item" href="cadastro-clientes.jsp" style="color: black;">Clientes</a>
                         <a class="dropdown-item" href="cadastro-fornecedores.jsp" style="color: black;">Fornecedores</a>
                         <div class="dropdown-divider"></div>
                     </div>

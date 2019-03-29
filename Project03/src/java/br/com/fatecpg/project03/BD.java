@@ -16,7 +16,7 @@ public class BD {
             f1.setEmail("manoel@gmail.com");
             f1.setTelefone("+55 13 99123-4567");
             f1.setEndereco("Vila São Jorge - Santos");
-
+            fornecedoresList.add(f1);
         }
         return fornecedoresList;
     }
