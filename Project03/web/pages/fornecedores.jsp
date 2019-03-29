@@ -74,7 +74,7 @@
             </div>
         </nav>
         <h4 style="text-align: center; margin-top: 70px">Fornecedores Cadastrados</h4>
-        <div style="width: 600px; position: absolute; left: 200px; top: 200px">
+        <div style="width: 1000px; position: absolute; left: 240px; top: 200px">
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
