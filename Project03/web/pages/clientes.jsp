@@ -27,9 +27,27 @@
         novoCliente.setEndereco(endereco);
         BD.getClienteList().add(novoCliente);
         response.sendRedirect(request.getRequestURI());
-        
-        
-        
+       
+    }else if (request.getParameter("excluir") != null) {
+        String resposta = request.getParameter("excluir");
+        if (resposta.equals("Sim")) {
+            int id = Integer.parseInt(request.getParameter("id"));
+            BD.getClienteList().remove(id);
+        }
+        response.sendRedirect(request.getRequestURI());
+
+    }else if (request.getParameter("alterar") != null) {
+        String respostaaltera = request.getParameter("alterar");
+        if (respostaaltera.equals("Sim")) {
+            int id = Integer.parseInt(request.getParameter("id"));
+            Cliente novoCliente = new Cliente ();
+            novoCliente.setNome(request.getParameter("nome"));
+            novoCliente.setTel(request.getParameter("telefone"));
+            novoCliente.setEmail(request.getParameter("email"));
+            BD.getClienteList().set(id, novoCliente);
+        }
+        response.sendRedirect(request.getRequestURI());
+
     }
 %>
 
@@ -108,8 +126,8 @@
                     <td><%= c.getTel()%></td>
                     <td><%= c.getEndereco()%></td>
                     <td>
-                        <a href="alterar.jsp?id=<%=id%>" style="text-align: center; text-decoration: none">Alterar</a><br/>
-                        <a href="excluir.jsp?id=<%=id%>" style="text-align: center; text-decoration: none">Excluir</a>
+                        <a href="alterar-cliente.jsp?id=<%=id%>" style="text-align: center; text-decoration: none">Alterar</a><br/>
+                        <a href="excluir-cliente.jsp?id=<%=id%>" style="text-align: center; text-decoration: none">Excluir</a>
                     </td>
                 </tr>
                 <%}%>
