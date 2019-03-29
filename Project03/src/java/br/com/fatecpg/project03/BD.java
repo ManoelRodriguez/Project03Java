@@ -23,7 +23,7 @@ public class BD {
     
     private static ArrayList<Cliente> clientesList;
 
-    public static ArrayList<Cliente> getContatosClienteList() {
+    public static ArrayList<Cliente> getClienteList() {
         if (clientesList == null) {
             clientesList = new ArrayList<>();
             Cliente novoc = new Cliente();
