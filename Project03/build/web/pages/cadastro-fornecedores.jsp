@@ -59,7 +59,7 @@
 
     <h4 style="text-align: center; margin-top:100px ">Cadastro de Fornecedores</h4>
 
-    <form action="fornecedores.jsp" style="width: 300px; height: 300px; position: absolute; left: 430px; top: 120px; margin: 100px;">
+    <form action="fornecedores.jsp" style="width: 300px; height: 300px; position: absolute; left: 500px; top: 120px; margin: 100px;">
         <input type="text" name="nome" placeholder="Nome" class="form-control" required><br>
         <input type="text" name="razao" placeholder="Razão Social" class="form-control" required><br>
         <input type="text" name="cnpj" placeholder="CNJP" class="form-control" required><br>

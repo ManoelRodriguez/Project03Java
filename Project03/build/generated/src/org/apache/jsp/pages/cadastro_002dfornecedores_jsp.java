@@ -98,8 +98,7 @@ public final class cadastro_002dfornecedores_jsp extends org.apache.jasper.runti
       out.write("\n");
       out.write("    <h4 style=\"text-align: center; margin-top:100px \">Cadastro de Fornecedores</h4>\n");
       out.write("\n");
-      out.write("    <form action=\"fornecedores.jsp\"\n");
-      out.write("        style=\"width: 300px; height: 300px; position: absolute; left: 430px; top: 120px; margin: 100px;\">\n");
+      out.write("    <form action=\"fornecedores.jsp\" style=\"width: 300px; height: 300px; position: absolute; left: 430px; top: 120px; margin: 100px;\">\n");
       out.write("        <input type=\"text\" name=\"nome\" placeholder=\"Nome\" class=\"form-control\" required><br>\n");
       out.write("        <input type=\"text\" name=\"razao\" placeholder=\"Razão Social\" class=\"form-control\" required><br>\n");
       out.write("        <input type=\"text\" name=\"cnpj\" placeholder=\"CNJP\" class=\"form-control\" required><br>\n");
