@@ -1,6 +1,6 @@
 <%-- 
-    Document   : fornecedores
-    Created on : 29/03/2019, 10:50:13
+    Document   : alterar-fornecedor
+    Created on : 29/03/2019, 20:55:26
     Author     : Manoel Rodriguez
 --%>
 
@@ -8,51 +8,10 @@
 <%@page import="br.com.fatecpg.project03.Fornecedor"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%
-    if (request.getParameter("enviar") != null) {
-        String nome = request.getParameter("nome");
-        String razao = request.getParameter("razao");
-        String cnpj = request.getParameter("cnpj");
-        String email = request.getParameter("email");
-        String telefone = request.getParameter("telefone");
-        String endereco = request.getParameter("endereco");
-        Fornecedor novoFornecedor = new Fornecedor();
-        novoFornecedor.setNome(nome);
-        novoFornecedor.setRazao(razao);
-        novoFornecedor.setCnpj(cnpj);
-        novoFornecedor.setEmail(email);
-        novoFornecedor.setTelefone(telefone);
-        novoFornecedor.setEndereco(endereco);
-        BD.getFornecedoresList().add(novoFornecedor);
-        response.sendRedirect(request.getRequestURI());
-    } else if (request.getParameter("excluir") != null) {
-        String resposta = request.getParameter("excluir");
-        if (resposta.equals("Sim")) {
-            int id = Integer.parseInt(request.getParameter("id"));
-            BD.getFornecedoresList().remove(id);
-        }
-        response.sendRedirect(request.getRequestURI());
-
-    }else if(request.getParameter("alterar") != null){
-        String respostaaltera = request.getParameter("alterar");
-        if (respostaaltera.equals("Sim")) {
-            int id = Integer.parseInt(request.getParameter("id"));
-            Fornecedor f1 = new Fornecedor ();
-            f1.setNome(request.getParameter("nome"));
-            f1.setTelefone(request.getParameter("telefone"));
-            f1.setEmail(request.getParameter("email"));
-            f1.setRazao(request.getParameter("razao"));
-            f1.setEndereco(request.getParameter("endereco"));
-            f1.setCnpj(request.getParameter("cnpj"));
-            BD.getFornecedoresList().set(id, f1);
-        }
-        response.sendRedirect(request.getRequestURI());
-    }
-%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Fornecedores Cadastrados</title>
+        <title>Alterar Clientes</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
               integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     </head>
@@ -83,7 +42,7 @@
                             Cadastre-se
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="cadastro-clientes.jsp" style="color: black;">Clientes</a>
+                            <a class="dropdown-item" href="cadastro-cliente.jsp" style="color: black;">Clientes</a>
                             <a class="dropdown-item" href="cadastro-fornecedores.jsp" style="color: black;">Fornecedores</a>
                             <div class="dropdown-divider"></div>
                         </div>
@@ -95,42 +54,31 @@
                 </form>
             </div>
         </nav>
-        <h4 style="text-align: center; margin-top: 70px">Fornecedores Cadastrados</h4>
-        <div style="width: 1000px; position: absolute; left: 240px; top: 200px">
-            <table class="table">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Razão Social</th>
-                        <th scope="col">CNPJ</th>
-                        <th scope="col">E-mail</th>
-                        <th scope="col">Telefone</th>
-                        <th scope="col">Endereço</th>
-                        <th scope="col">Comandos</th>
-                    </tr>
-                </thead>
-                <%for (Fornecedor c : BD.getFornecedoresList()) {%>
-                <tr>
-                    <%int id = BD.getFornecedoresList().indexOf(c);%>
 
-                    <td><%= id%></td>
-                    <td><%= c.getNome()%></td>
-                    <td><%= c.getRazao()%></td>
-                    <td><%= c.getCnpj()%></td>
-                    <td><%= c.getEmail()%></td>
-                    <td><%= c.getTelefone()%></td>
-                    <td><%= c.getEndereco()%></td>
-                    <td>
-                        <a href="alterar-fornecedor.jsp?id=<%=id%>" style="text-align: center; text-decoration: none">Alterar</a><br/>
-                        <a href="excluir-fornecedor.jsp?id=<%=id%>" style="text-align: center; text-decoration: none">Excluir</a>
-                    </td>
-                </tr>
-                <%}%>
-            </table>
-        </div>
-
-        <footer style="position: absolute; top: 700px; left: 50px;">
+        <% int id = Integer.parseInt(request.getParameter("id"));%>
+        <%Fornecedor f = BD.getFornecedoresList().get(id);%>
+        <h4 style="text-align: center; margin-top: 70px;">Alteração de Dados</h4>
+        <form action="fornecedores.jsp" style="width: 300px; position: absolute; top: 200px; left: 525px;">
+            Nome:
+            <br/><input type="text" name="nome" class="form-control" value="<%= f.getNome()%>"/>
+            <br/>Razão Social:
+            <br/><input type="text" name="razao" class="form-control" value="<%= f.getRazao()%>"/>
+            <br/>CNPJ:
+            <br/><input type="text" name="cnpj" class="form-control" value="<%= f.getCnpj()%>"/>
+            <br/>Email:
+            <br/><input type="text" name="email" class="form-control" value="<%= f.getEmail()%>"/>
+            <br/>Telefone:
+            <br/><input type="text" name="telefone" class="form-control" value="<%= f.getTelefone()%>"/>
+            <br/>Endereço:
+            <br/><input type="text" name="endereco" class="form-control" value="<%= f.getEndereco()%>"/>
+            
+            <input type="submit" name="alterar" value="Sim" class="btn btn-primary" style="position: absolute; left: 80px;top: 580px;"/>
+            <input type="submit" name="alterar" value="Não" class="btn btn-primary" style="position: absolute; left: 180px;top: 580px;"/>
+            <input type="hidden" name="id" value="<%=id%>"/>
+        </form>
+        <h4 style="color: red; position: absolute; top: 725px; left: 425px;">Tem certeza que deseja alterar esse registro?</h4>
+        
+        <footer style="position: absolute; top: 900px; left: 50px;">
             <hr style="width: 1300px;">
             <p style="text-align: center;"> <a href="https://github.com/ManoelRodriguez">Manoel Victor</a> || <a
                     href="https://github.com/matheussmorais">Matheus Morais</a></p>

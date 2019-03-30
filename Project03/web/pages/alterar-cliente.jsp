@@ -83,7 +83,7 @@
         
         </div>
         
-        <footer style="position: absolute; top: 700px; left: 0px;">
+        <footer style="position: absolute; top: 700px; left: -280px;">
         <hr style="width: 1920px;">
         <p style="text-align: center;"> <a href="https://github.com/ManoelRodriguez">Manoel Victor</a> || <a
                 href="https://github.com/matheussmorais">Matheus Morais</a></p>

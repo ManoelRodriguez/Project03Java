@@ -33,6 +33,20 @@
         }
         response.sendRedirect(request.getRequestURI());
 
+    }else if(request.getParameter("alterar") != null){
+        String respostaaltera = request.getParameter("alterar");
+        if (respostaaltera.equals("Sim")) {
+            int id = Integer.parseInt(request.getParameter("id"));
+            Fornecedor f1 = new Fornecedor ();
+            f1.setNome(request.getParameter("nome"));
+            f1.setTelefone(request.getParameter("telefone"));
+            f1.setEmail(request.getParameter("email"));
+            f1.setRazao(request.getParameter("razao"));
+            f1.setEndereco(request.getParameter("endereco"));
+            f1.setCnpj(request.getParameter("cnpj"));
+            BD.getFornecedoresList().set(id, f1);
+        }
+        response.sendRedirect(request.getRequestURI());
     }
 %>
 <html>
