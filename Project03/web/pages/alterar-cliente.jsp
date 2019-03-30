@@ -47,7 +47,7 @@
                         Cadastre-se
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="cadastro-cliente.jsp" style="color: black;">Clientes</a>
+                        <a class="dropdown-item" href="cadastro-clientes.jsp" style="color: black;">Clientes</a>
                         <a class="dropdown-item" href="cadastro-fornecedores.jsp" style="color: black;">Fornecedores</a>
                         <div class="dropdown-divider"></div>
                     </div>
@@ -70,20 +70,26 @@
         
         <form action="clientes.jsp">
             Nome:
-            <br/><input type="text" name="nome" value="<%= c.getNome() %>"/>
-            <br/>Telefone:
-            <br/><input type="text" name="telefone" value="<%= c.getTel() %>"/>
+            <br/><input type="text" name="nome" class="form-control" placeholder="Nome" value="<%= c.getNome() %>"/>
+            <br/>CPF:
+            <br/><input type="text" name="cpf" class="form-control" placeholder="CPF" value="<%= c.getCpf() %>"/>
+            <br/>RG:
+            <br/><input type="text" name="registrogeral" class="form-control" placeholder="RG" value="<%= c.getRegistrogeral() %>"/>
             <br/>Email:
-            <br/><input type="text" name="email" value="<%= c.getEmail() %>"/>
+            <br/><input type="text" name="email" class="form-control" placeholder="E-mail" value="<%= c.getEmail() %>"/>
+            <br/>Telefone:
+            <br/><input type="text" name="telefone" class="form-control" placeholder="Telefone" value="<%= c.getTel() %>"/>
+            <br/>Endereço:
+            <br/><input type="text" name="endereco" class="form-control" placeholder="Endereço" value="<%= c.getEndereco()  %>"/>
             <hr/><h4 style="color: red">Tem certeza que deseja alterar esse registro?</h4>
-            <input type="submit" name="excluir" value="Sim" class="btn btn-primary"/>
-            <input type="submit" name="excluir" value="Não" class="btn btn-primary"/>
+            <input type="submit" name="alterar" value="Sim" class="btn btn-primary"/>
+            <input type="submit" name="alterar" value="Não" class="btn btn-primary"/>
             <input type="hidden" name="id" value="<%=id%>"/>
         </form>
         
         </div>
         
-        <footer style="position: absolute; top: 700px; left: 0px;">
+        <footer style="position: absolute; top: 900px; left: 0px;">
         <hr style="width: 1920px;">
         <p style="text-align: center;"> <a href="https://github.com/ManoelRodriguez">Manoel Victor</a> || <a
                 href="https://github.com/matheussmorais">Matheus Morais</a></p>
