@@ -44,7 +44,7 @@
                         Cadastre-se
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="cadastro-cliente.jsp" style="color: black;">Clientes</a>
+                        <a class="dropdown-item" href="cadastro-clientes.jsp" style="color: black;">Clientes</a>
                         <a class="dropdown-item" href="cadastro-fornecedores.jsp" style="color: black;">Fornecedores</a>
                         <div class="dropdown-divider"></div>
                     </div>
@@ -59,7 +59,7 @@
 
     <h4 style="text-align: center; margin-top:100px ">Cadastro de Fornecedores</h4>
 
-    <form action="fornecedores.jsp" style="width: 300px; height: 300px; position: absolute; left: 500px; top: 120px; margin: 100px;">
+    <form action="fornecedores.jsp" style="width: 300px; height: 300px; position: absolute; left: 425px; top: 120px; margin: 100px;">
         <input type="text" name="nome" placeholder="Nome" class="form-control" required><br>
         <input type="text" name="razao" placeholder="Razão Social" class="form-control" required><br>
         <input type="text" name="cnpj" placeholder="CNJP" class="form-control" required><br>

@@ -1,58 +1,17 @@
 <%-- 
-    Document   : fornecedores
-    Created on : 29/03/2019, 10:50:13
+    Document   : excluir-fornecedor
+    Created on : 29/03/2019, 19:01:05
     Author     : Manoel Rodriguez
 --%>
 
-<%@page import="br.com.fatecpg.project03.BD"%>
 <%@page import="br.com.fatecpg.project03.Fornecedor"%>
+<%@page import="br.com.fatecpg.project03.BD"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%
-    if (request.getParameter("enviar") != null) {
-        String nome = request.getParameter("nome");
-        String razao = request.getParameter("razao");
-        String cnpj = request.getParameter("cnpj");
-        String email = request.getParameter("email");
-        String telefone = request.getParameter("telefone");
-        String endereco = request.getParameter("endereco");
-        Fornecedor novoFornecedor = new Fornecedor();
-        novoFornecedor.setNome(nome);
-        novoFornecedor.setRazao(razao);
-        novoFornecedor.setCnpj(cnpj);
-        novoFornecedor.setEmail(email);
-        novoFornecedor.setTelefone(telefone);
-        novoFornecedor.setEndereco(endereco);
-        BD.getFornecedoresList().add(novoFornecedor);
-        response.sendRedirect(request.getRequestURI());
-    } else if (request.getParameter("excluir") != null) {
-        String resposta = request.getParameter("excluir");
-        if (resposta.equals("Sim")) {
-            int id = Integer.parseInt(request.getParameter("id"));
-            BD.getFornecedoresList().remove(id);
-        }
-        response.sendRedirect(request.getRequestURI());
-
-    }else if(request.getParameter("alterar") != null){
-        String respostaaltera = request.getParameter("alterar");
-        if (respostaaltera.equals("Sim")) {
-            int id = Integer.parseInt(request.getParameter("id"));
-            Fornecedor f1 = new Fornecedor ();
-            f1.setNome(request.getParameter("nome"));
-            f1.setTelefone(request.getParameter("telefone"));
-            f1.setEmail(request.getParameter("email"));
-            f1.setRazao(request.getParameter("razao"));
-            f1.setEndereco(request.getParameter("endereco"));
-            f1.setCnpj(request.getParameter("cnpj"));
-            BD.getFornecedoresList().set(id, f1);
-        }
-        response.sendRedirect(request.getRequestURI());
-    }
-%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Fornecedores Cadastrados</title>
+        <title>Excluir Fornecedor</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
               integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     </head>
@@ -95,39 +54,49 @@
                 </form>
             </div>
         </nav>
-        <h4 style="text-align: center; margin-top: 70px">Fornecedores Cadastrados</h4>
-        <div style="width: 1000px; position: absolute; left: 240px; top: 200px">
+        <% int id = Integer.parseInt(request.getParameter("id"));%>
+        <% Fornecedor f = BD.getFornecedoresList().get(id);%>
+        <div style="width: 500px; position: absolute; left: 450px; top: 100px">
             <table class="table">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Razão Social</th>
-                        <th scope="col">CNPJ</th>
-                        <th scope="col">E-mail</th>
-                        <th scope="col">Telefone</th>
-                        <th scope="col">Endereço</th>
-                        <th scope="col">Comandos</th>
-                    </tr>
-                </thead>
-                <%for (Fornecedor c : BD.getFornecedoresList()) {%>
-                <tr>
-                    <%int id = BD.getFornecedoresList().indexOf(c);%>
 
-                    <td><%= id%></td>
-                    <td><%= c.getNome()%></td>
-                    <td><%= c.getRazao()%></td>
-                    <td><%= c.getCnpj()%></td>
-                    <td><%= c.getEmail()%></td>
-                    <td><%= c.getTelefone()%></td>
-                    <td><%= c.getEndereco()%></td>
-                    <td>
-                        <a href="alterar-fornecedor.jsp?id=<%=id%>" style="text-align: center; text-decoration: none">Alterar</a><br/>
-                        <a href="excluir-fornecedor.jsp?id=<%=id%>" style="text-align: center; text-decoration: none">Excluir</a>
-                    </td>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th><%=id%></th>
                 </tr>
-                <%}%>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th><%=f.getNome()%></th>                   
+                </tr>
+                <tr>
+                    <th scope="col">Razão Social</th>
+                    <th><%=f.getRazao()%></th>
+                </tr>
+                <tr>
+                    <th scope="col">CNPJ</th>
+                    <th><%=f.getCnpj()%></th>
+                </tr>
+                <tr>
+                    <th scope="col">E-mail</th>
+                    <th><%=f.getEmail()%></th>
+                </tr>
+                <tr>
+                    <th scope="col">Telefone</th>
+                    <th><%=f.getTelefone()%></th>
+                </tr>
+                <tr>
+                    <th scope="col">Endereço</th>
+                    <th><%=f.getEndereco()%></th>
+                </tr>
+
             </table>
+        </div>
+        <h4 style="color: red; text-align: center;position: absolute; top: 500px; left: 450px;">Deseja realmente excluir os dados cadastrados?</h4><br/>
+        <div style="position: absolute; left: 650px; position:absolute; top: 550px">
+            <form action="fornecedores.jsp">
+                <input type="submit" name="excluir" value="Sim" class="btn btn-primary"/>
+                <input type="submit" name="excluir" value="Não" class="btn btn-primary" />
+                <input type="hidden" name="id" value="<%=id%>"/>
+            </form>
         </div>
 
         <footer style="position: absolute; top: 700px; left: 50px;">
@@ -145,5 +114,6 @@
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
                     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
             </script>
+        </footer>
     </body>
 </html>

@@ -14,9 +14,9 @@ public class Cliente {
     private String nome;
     private String cpf;
     private String registrogeral;
-    private String email;
     private String tel;
-    private String endereco;    
+    private String endereco;
+    private String email;
 
     public String getNome() {
         return nome;
@@ -42,14 +42,6 @@ public class Cliente {
         this.registrogeral = registrogeral;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getTel() {
         return tel;
     }
@@ -64,6 +56,14 @@ public class Cliente {
 
     public void setEndereco(String endereco) {
         this.endereco = endereco;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
     
 }

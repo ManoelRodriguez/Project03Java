@@ -43,7 +43,7 @@
                         Cadastre-se
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="cadastro-cliente.jsp" style="color: black;">Clientes</a>
+                        <a class="dropdown-item" href="cadastro-clientes.jsp" style="color: black;">Clientes</a>
                         <a class="dropdown-item" href="cadastro-fornecedores.jsp" style="color: black;">Fornecedores</a>
                         <div class="dropdown-divider"></div>
                     </div>
@@ -58,7 +58,7 @@
 
     <h4 style="text-align: center; margin-top:100px ">Cadastro de Clientes</h4>
         
-        <form action="clientes.jsp" style="width: 300px; height: 300px; position: absolute; left: 500px; top: 120px; margin: 100px;">
+        <form action="clientes.jsp" style="width: 300px; height: 300px; position: absolute; left: 425px; top: 120px; margin: 100px;">
         <input type="text" name="nome" placeholder="Nome" class="form-control" required><br>
         <input type="text" name="cpf" placeholder="CPF" class="form-control" required><br>
         <input type="text" name="registrogeral" placeholder="RG" class="form-control" required><br>
@@ -68,7 +68,7 @@
             <button type="submit" name="enviar" class="btn btn-primary" style="position: absolute; left: 120px" required>Enviar</button>
     </form>
     
-        <footer style="position: absolute; top: 700px; left: 0px;">
+        <footer style="position: absolute; top: 700px; left: -280px;">
         <hr style="width: 1920px;">
         <p style="text-align: center;"> <a href="https://github.com/ManoelRodriguez">Manoel Victor</a> || <a
                 href="https://github.com/matheussmorais">Matheus Morais</a></p>

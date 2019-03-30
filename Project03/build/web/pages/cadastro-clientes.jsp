@@ -1,26 +1,23 @@
 <%-- 
-    Document   : home
-    Created on : 28/03/2019, 13:12:19
-    Author     : Manoel Rodriguez
+    Document   : cadastro-clientes
+    Created on : 29/03/2019, 13:10:34
+    Author     : Casa
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-    <title>Home</title>
-
-</head>
-
-<body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Cadastro de Clientes</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <a class="navbar-brand" href="home.jsp" style="color: white">Projeto 3</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
             aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
@@ -58,44 +55,22 @@
             </form>
         </div>
     </nav>
-    <div class="jumbotron" style="height: 350px; padding: 120px;">
-        <div class="container">
-            <h1>Informações</h1>
-            <p>Este projeto consiste em uma aplicação Java Web para cadastro de Clientes e Fornecedores, utilizando ArrayList.
-            </p>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6" style="text-align: justify;">
-                <h3>Cadastro para Clientes</h3>
-                <ul>
-                    <li>Nome</li>
-                    <li>CPF</li>
-                    <li>RG</li>
-                    <li>Email</li>
-                    <li>Telefone</li>
-                    <li>Endereço</li>
-                </ul>
-            </div>
-            <div class="col-md-6" style="text-align: justify;">
-                <h3>Cadastro para Fornecedores</h3>
-                <ul>
-                    <li>Nome</li>
-                    <li>Razão Social</li>
-                    <li>CNPJ</li>
-                    <li>Email</li>
-                    <li>Telefone</li>
-                    <li>Endereço</li>
-                </ul>
-            </div>
 
-        </div>
-
-    </div>
-    <footer>
-        <hr>
-        <p style="text-align: center"> <a href="https://github.com/ManoelRodriguez">Manoel Victor</a> || <a
+    <h4 style="text-align: center; margin-top:100px ">Cadastro de Clientes</h4>
+        
+        <form action="clientes.jsp" style="width: 300px; height: 300px; position: absolute; left: 425px; top: 120px; margin: 100px;">
+        <input type="text" name="nome" placeholder="Nome" class="form-control" required><br>
+        <input type="text" name="cpf" placeholder="CPF" class="form-control" required><br>
+        <input type="text" name="registrogeral" placeholder="RG" class="form-control" required><br>
+        <input type="email" name="email" placeholder="E-mail" class="form-control" required><br>
+        <input type="text" name="tel" placeholder="Telefone" class="form-control" required><br>
+        <input type="text" name="endereco" placeholder="Endereço" class="form-control" required><br>
+            <button type="submit" name="enviar" class="btn btn-primary" style="position: absolute; left: 120px" required>Enviar</button>
+    </form>
+    
+        <footer style="position: absolute; top: 700px; left: -280px;">
+        <hr style="width: 1920px;">
+        <p style="text-align: center;"> <a href="https://github.com/ManoelRodriguez">Manoel Victor</a> || <a
                 href="https://github.com/matheussmorais">Matheus Morais</a></p>
         <!-- JavaScript (Opcional) -->
         <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
@@ -109,6 +84,6 @@
             integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
         </script>
     </footer>
-</body>
 
+    </body>
 </html>

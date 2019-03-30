@@ -1,26 +1,27 @@
 <%-- 
-    Document   : home
-    Created on : 28/03/2019, 13:12:19
-    Author     : Manoel Rodriguez
+    Document   : excluir-cliente
+    Created on : 29/03/2019, 14:27:01
+    Author     : Casa
 --%>
 
+<%@page import="br.com.fatecpg.project03.BD"%>
+<%@page import="br.com.fatecpg.project03.Cliente"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-    <title>Home</title>
-
-</head>
-
-<body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Excluir Dados do Cliente</title>
+    </head>
+    
+    <body>
+       
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <a class="navbar-brand" href="home.jsp" style="color: white">Projeto 3</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
             aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
@@ -58,44 +59,35 @@
             </form>
         </div>
     </nav>
-    <div class="jumbotron" style="height: 350px; padding: 120px;">
-        <div class="container">
-            <h1>Informações</h1>
-            <p>Este projeto consiste em uma aplicação Java Web para cadastro de Clientes e Fornecedores, utilizando ArrayList.
-            </p>
+        
+        <h4 style="text-align: center; margin-top:100px">Deseja excluir os dados?</h4>
+        <br>
+        <br>
+        <div style="text-align: center; display: inline-block; position: absolute; top:200px; left: 700px">
+        <% int id = Integer.parseInt(request.getParameter("id"));%>
+        <%Cliente c = BD.getClienteList().get(id); %>
+        <br>
+        <h4>ID: <b><%=id%></b></h4>
+        <h4>Nome: <b><%= c.getNome() %></b></h4>
+        <h4>CPF: <b><%= c.getCpf() %></b></h4>
+        <h4>RG: <b><%= c.getRegistrogeral() %></b></h4>
+        <h4>Email: <b><%= c.getEmail() %></b></h4>
+        <h4>Telefone: <b><%= c.getTel() %></b> </h4>
+        <h4>Endereço: <b><%= c.getEndereco() %></b></h4>
+        
+        
+        <form action="clientes.jsp">
+            <br>
+            <h4 style="color: red">Deseja realmente excluir os dados cadastrados?</h4>
+            <input type="submit" name="excluir" value="Sim" class="btn btn-primary"/>
+            <input type="submit" name="excluir" value="Não" class="btn btn-primary" />
+            <input type="hidden" name="id" value="<%=id%>"/>
+        </form>
         </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6" style="text-align: justify;">
-                <h3>Cadastro para Clientes</h3>
-                <ul>
-                    <li>Nome</li>
-                    <li>CPF</li>
-                    <li>RG</li>
-                    <li>Email</li>
-                    <li>Telefone</li>
-                    <li>Endereço</li>
-                </ul>
-            </div>
-            <div class="col-md-6" style="text-align: justify;">
-                <h3>Cadastro para Fornecedores</h3>
-                <ul>
-                    <li>Nome</li>
-                    <li>Razão Social</li>
-                    <li>CNPJ</li>
-                    <li>Email</li>
-                    <li>Telefone</li>
-                    <li>Endereço</li>
-                </ul>
-            </div>
-
-        </div>
-
-    </div>
-    <footer>
-        <hr>
-        <p style="text-align: center"> <a href="https://github.com/ManoelRodriguez">Manoel Victor</a> || <a
+        
+        <footer style="position: absolute; top: 700px; left: -280px;">
+        <hr style="width: 1920px;">
+        <p style="text-align: center;"> <a href="https://github.com/ManoelRodriguez">Manoel Victor</a> || <a
                 href="https://github.com/matheussmorais">Matheus Morais</a></p>
         <!-- JavaScript (Opcional) -->
         <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
@@ -109,6 +101,5 @@
             integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
         </script>
     </footer>
-</body>
-
+    </body>
 </html>
