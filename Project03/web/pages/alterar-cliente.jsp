@@ -47,7 +47,7 @@
                         Cadastre-se
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="cadastro-cliente.jsp" style="color: black;">Clientes</a>
+                        <a class="dropdown-item" href="cadastro-clientes.jsp" style="color: black;">Clientes</a>
                         <a class="dropdown-item" href="cadastro-fornecedores.jsp" style="color: black;">Fornecedores</a>
                         <div class="dropdown-divider"></div>
                     </div>
@@ -60,44 +60,46 @@
         </div>
     </nav>
         
-        <h4 style="text-align: center; margin-top:100px ">Deseja alterar os dados?</h4>
-        
-        <div style="text-align: center; display: inline-block; position: absolute; top:200px; left: 730px">
         <% int id = Integer.parseInt(request.getParameter("id"));%>
         <%Cliente c = BD.getClienteList().get(id); %>
         <br>
-        <h4>ID:<b><%=id%></b></h4>
         
-        <form action="clientes.jsp">
+        <h4 style="text-align: center; margin-top: 70px;">Alteração de Dados</h4>
+        <form action="clientes.jsp" style="width: 300px; position: absolute; top: 200px; left: 525px;">
             Nome:
-            <br/><input type="text" name="nome" value="<%= c.getNome() %>"/>
-            <br/>Telefone:
-            <br/><input type="text" name="telefone" value="<%= c.getTel() %>"/>
+            <br/><input type="text" name="nome" class="form-control" value="<%= c.getNome()%>"/>
+            <br/>CPF:
+            <br/><input type="text" name="cpf" class="form-control" value="<%= c.getCpf()%>"/>
+            <br/>RG:
+            <br/><input type="text" name="registrogeral" class="form-control" value="<%= c.getRegistrogeral()%>"/>
             <br/>Email:
-            <br/><input type="text" name="email" value="<%= c.getEmail() %>"/>
-            <hr/><h4 style="color: red">Tem certeza que deseja alterar esse registro?</h4>
-            <input type="submit" name="excluir" value="Sim" class="btn btn-primary"/>
-            <input type="submit" name="excluir" value="Não" class="btn btn-primary"/>
+            <br/><input type="text" name="email" class="form-control" value="<%= c.getEmail()%>"/>
+            <br/>Telefone:
+            <br/><input type="text" name="telefone" class="form-control" value="<%= c.getTel()%>"/>
+            <br/>Endereço:
+            <br/><input type="text" name="endereco" class="form-control" value="<%= c.getEndereco()%>"/>
+            
+            <input type="submit" name="alterar" value="Sim" class="btn btn-primary" style="position: absolute; left: 80px;top: 580px;"/>
+            <input type="submit" name="alterar" value="Não" class="btn btn-primary" style="position: absolute; left: 180px;top: 580px;"/>
             <input type="hidden" name="id" value="<%=id%>"/>
         </form>
+        <h4 style="color: red; position: absolute; top: 725px; left: 425px;">Tem certeza que deseja alterar esse registro?</h4>
         
-        </div>
-        
-        <footer style="position: absolute; top: 700px; left: -280px;">
-        <hr style="width: 1920px;">
-        <p style="text-align: center;"> <a href="https://github.com/ManoelRodriguez">Manoel Victor</a> || <a
-                href="https://github.com/matheussmorais">Matheus Morais</a></p>
-        <!-- JavaScript (Opcional) -->
-        <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
-        </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
-        </script>
+        <footer style="position: absolute; top: 900px; left: 50px;">
+            <hr style="width: 1300px;">
+            <p style="text-align: center;"> <a href="https://github.com/ManoelRodriguez">Manoel Victor</a> || <a
+                    href="https://github.com/matheussmorais">Matheus Morais</a></p>
+            <!-- JavaScript (Opcional) -->
+            <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+            </script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+                    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+            </script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+                    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+            </script>
     </footer>
     </body>
 </html>

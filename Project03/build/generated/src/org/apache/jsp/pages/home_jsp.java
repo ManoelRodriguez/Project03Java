@@ -85,8 +85,8 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        Cadastre-se\n");
       out.write("                    </a>\n");
       out.write("                    <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n");
-      out.write("                        <a class=\"dropdown-item\" href=\"cadastro-cliente.jsp\" style=\"color: black;\">Clientes</a>\n");
-      out.write("                        <a class=\"dropdown-item\" href=\"cadastro-fornecedor.jsp\" style=\"color: black;\">Fornecedores</a>\n");
+      out.write("                        <a class=\"dropdown-item\" href=\"cadastro-clientes.jsp\" style=\"color: black;\">Clientes</a>\n");
+      out.write("                        <a class=\"dropdown-item\" href=\"cadastro-fornecedores.jsp\" style=\"color: black;\">Fornecedores</a>\n");
       out.write("                        <div class=\"dropdown-divider\"></div>\n");
       out.write("                    </div>\n");
       out.write("                </li>\n");

@@ -44,6 +44,9 @@
             novoCliente.setNome(request.getParameter("nome"));
             novoCliente.setTel(request.getParameter("telefone"));
             novoCliente.setEmail(request.getParameter("email"));
+            novoCliente.setRegistrogeral(request.getParameter("registrogeral"));
+            novoCliente.setCpf(request.getParameter("cpf"));
+            novoCliente.setEndereco(request.getParameter("endereco"));
             BD.getClienteList().set(id, novoCliente);
         }
         response.sendRedirect(request.getRequestURI());
